@@ -58,4 +58,4 @@ git pull origin main
 ```
 ./run\_rl\_swarm.sh
 ```
-after running copy the tunnel link and open it in browser 
+after running copy the tunnel link and open it in browser if you are getting logs then node is ok,type ctrl A+D and save screen no.
