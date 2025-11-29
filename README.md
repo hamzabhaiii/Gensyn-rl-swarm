@@ -56,7 +56,7 @@ git pull origin main
 ```
 7. run the node
 ```
-./run\_rl\_swarm.sh
+cd $HOME && rm -rf gensyn-testnet && git clone https://github.com/zunxbt/gensyn-testnet.git && chmod +x gensyn-testnet/gensyn.sh && ./gensyn-testnet/gensyn.sh
 ```
 # create a new vps session 
 ```
