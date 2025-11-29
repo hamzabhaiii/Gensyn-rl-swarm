@@ -58,4 +58,8 @@ git pull origin main
 ```
 ./run\_rl\_swarm.sh
 ```
+# create a new vps session 
+```
+cloudflared tunnel --url http://localhost:3000
+```
 after running copy the tunnel link and open it in browser if you are getting logs then node is ok,type ctrl A+D and save screen no.
