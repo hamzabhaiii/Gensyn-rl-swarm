@@ -16,7 +16,7 @@ free -h
 
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
-1. Install dependencies
+1. Install dependencies in one go
 ``` sudo apt update \&\& sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof
 python3 --version
 curl -fsSL https://deb.nodesource.com/setup\_20.x | sudo -E bash -
@@ -26,4 +26,36 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update \&\& sudo apt install -y yarn
 node -v
 npm -v
-yarn -v ```
+yarn -v
+```
+
+2. clone the rl-swarm repository
+```
+git clone https://github.com/gensyn-ai/rl-swarm.git
+```
+4. Create a screen session of gensyn
+```
+screen -S gensyn
+```
+5. Setup environment 
+```
+cd rl-swarm
+python3 -m venv .venv
+source .venv/bin/activate
+cd modal-login
+yarn install
+yarn upgrade \&\& yarn add next@latest \&\& yarn add viem@latest
+cd ..
+```
+6. Update repository to run on latest update
+```
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
+```
+7. run the node
+```
+./run\_rl\_swarm.sh
+```
+after running copy the tunnel link and open it in browser 
